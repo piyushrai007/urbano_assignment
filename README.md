@@ -11,8 +11,7 @@ UrbanoInfoTech is a Django-based project that provides user authentication funct
 - [Testing the API on the Hosted Server](#testing-the-api-on-the-hosted-server)
 - [Running Tests Locally](#running-tests-locally)
 - [Environment Variables](#environment-variables)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Features
 
