@@ -1,8 +1,10 @@
-# accounts/urls.py
-from django.urls import path
-from .views import RegisterView, ActivateAccountView
+# FILE: Authentication/urls.py
+
+from django.urls import path, re_path
+from .views import RegisterView, ActivateAccountView, LoginView
 
 urlpatterns = [
     path('signup/', RegisterView.as_view(), name='signup'),
-    path('activate/<uid>/<token>/', ActivateAccountView.as_view(), name='activate'),
+    re_path(r'^activate/(?P<uidb64>[^/]+)/(?P<token>.+)/$', ActivateAccountView.as_view(), name='activate'),
+    path('login/', LoginView.as_view(), name='login'),
 ]
