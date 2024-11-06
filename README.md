@@ -8,7 +8,8 @@ UrbanoInfoTech is a Django-based project that provides user authentication funct
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Running Tests](#running-tests)
+- [Testing the API on the Hosted Server](#testing-the-api-on-the-hosted-server)
+- [Running Tests Locally](#running-tests-locally)
 - [Environment Variables](#environment-variables)
 - [Contributing](#contributing)
 - [License](#license)
@@ -89,7 +90,36 @@ UrbanoInfoTech is a Django-based project that provides user authentication funct
   - Login: `POST /Authentication/login/`
   - Email verification: `GET /Authentication/activate/<uidb64>/<token>/`
 
-## Running Tests
+## Testing the API on the Hosted Server
+
+You can also test the API endpoints directly on the hosted server:
+
+- **Base URL**: `https://piyushraivds45.pythonanywhere.com`
+- **API Endpoints**:
+  - **Signup**: `POST https://piyushraivds45.pythonanywhere.com/Authentication/signup/`
+    - Use JSON payload with user details, such as:
+      ```json
+      {
+        "username": "testuser",
+        "email": "test@example.com",
+        "password": "yourpassword"
+      }
+      ```
+  - **Login**: `POST https://piyushraivds45.pythonanywhere.com/Authentication/login/`
+    - Use JSON payload with login credentials, such as:
+      ```json
+      {
+        "username": "testuser",
+        "password": "yourpassword"
+      }
+      ```
+  - **Email Verification**: When a user signs up, they will receive a verification email with a link similar to:
+    ```
+    https://piyushraivds45.pythonanywhere.com/Authentication/activate/<uidb64>/<token>/
+    ```
+    The user needs to visit this link to activate their account.
+
+## Running Tests Locally
 
 To run the tests, use the following command:
 
